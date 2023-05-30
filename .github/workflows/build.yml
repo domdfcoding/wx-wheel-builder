@@ -9,7 +9,7 @@ jobs:
     name: "Python ${{ matrix.python-version }}-${{ matrix.platform }}-wx-${{ matrix.wx-version }}"
     runs-on: ${{ matrix.platform }}
     env:
-      USING_COVERAGE: '3.6,3.7,3.8,3.9'
+      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10,3.11'
 
     strategy:
       fail-fast: False
@@ -19,14 +19,16 @@ jobs:
          - "3.7"
          - "3.8"
          - "3.9"
+         - "3.10"
+         - "3.11"
         platform:
-         - "ubuntu-16.04"
          - "ubuntu-18.04"
          - "ubuntu-20.04"
+         - "ubuntu-22.04"
         wx-version:
          - "4.0.7.post2"
          - "4.1.0"
-         - "4.1.1"
+         - "4.2.0"
 
     steps:
 
