@@ -49,7 +49,7 @@ jobs:
         run: "python -m pip wheel --no-deps wxPython==${{ matrix.wx-version }} --wheel-dir ./wheels --verbose"
 
       - name: "Upload Artefacts"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: "wxPython-${{ matrix.wx-version }}-py${{ matrix.python-version }}-${{ matrix.platform }}"
           path: ./wheels/*.whl
